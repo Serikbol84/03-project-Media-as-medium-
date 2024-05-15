@@ -1,11 +1,146 @@
 body {
     margin: 0;
     width: 100%;
+    background-color: rgba(241, 241, 241, 1)
 }
 
 img {
-    max-width: 100%;
+    max-width: 265px;
     display: flex;
 }
 
+.container {
+    margin: 0 160px;
+}
+
 /* ========================================== Header ======================================================= */
+.header {
+    font-family: Kanit;
+    color: rgba(0, 0, 0, 1);
+}
+
+.header-logo-1 {
+    padding: 24px 0;
+    font-size: 18px;
+}
+
+.header-logo-2 {
+    padding: 64px 0;
+    font-size: 48px;
+}
+
+/* ========================================== News List ======================================================= */
+.news-block {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-family: Inter;
+    color: rgba(0, 0, 0, 1);
+}
+
+.news {
+    max-width: 755px;
+}
+
+.news a {
+    color: rgb(111, 109, 109);
+    text-decoration: none;
+}
+
+
+.authors {
+    display: flex;
+    align-items: center;
+    height: 24px;
+}
+
+.authors p {
+    margin: 0 0 0 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.title {
+    margin: 48px 0 24px 0;
+    font-weight: 700;
+}
+
+.text p {
+    margin: 0 0 70px 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.button-actions {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-line {
+    display: flex;
+    height: 30px;
+    align-items: center;
+}
+
+.button-line p {
+    margin: 0 0 0 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.btn {
+    width: 107px;
+    height: 30px;
+    
+    border-radius: 100px;
+    border: none;
+    background-color: rgba(8, 30, 52, 0.12);
+}
+
+.btn a {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 1);
+}
+
+.actions {
+    align-self: end;
+}
+
+.divider span:after {
+    margin: 36px 0 45px 0;
+    content: '';
+    border: 1px solid rgba(111, 109, 109, 0.364);
+    display: block;
+}
+
+.main div:last-child.news-list .divider span::after{
+    margin-bottom: 0;
+}
+
+/* ========================================== Footer ======================================================= */
+.footer {
+    padding-bottom: 32px;
+    height: 918px;
+    display: flex;
+    align-items: end;
+}
+.footer p {
+    margin: 0;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+
+}
+
+.footer .container {
+    width: 100%;
+    text-align: right;
+}
+
+.footer-menu, a{
+    margin-bottom: 42px;
+    color: rgb(111, 109, 109);
+}
