@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    width: 100%;
+    background-color: rgba(241, 241, 241, 1)
+}
+
+img {
+    max-width: 100%;
+    display: flex;
+}
+
+.container {
+    margin: 0 160px;
+}
+
+/* ================================================== Header ============================================ */
+/* .header {
+    font-family: Kanit;
+    color: rgba(0, 0, 0, 1);
+}
+
+.header-logo-1 {
+    padding: 24px 0;
+    font-size: 18px;
+}
+
+.header-logo-2 {
+    padding: 64px 0;
+    font-size: 48px;
+} */
+/* ================================================== News ========================================== */
+.page {
+    margin-top: 96px;
+    max-height: 100%;
+}
+
+.news-1 {
+    max-width: 100%;
+}
+
+.news-1 img{
+    width: 100%;
+}
+
+.authors-page {
+    height: 64px;
+}
+
+.authors-page p {
+    font-size: 18px;
+    margin-left: 16px;
+}
+
+.authors-page a {
+    font-size: 14px;
+}
+
+.info {
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.photo img{
+    width: 64px;
+    height: 64px;
+}
+
+.title-1 {
+    margin-top: 70px;
+    font-size: 34px;
+}
+
+.text-1 p{
+    font-size: 24px;
+    line-height: 36px;
+}   
+
+.post-title {
+    margin: 70px 0 24px 0;
+    font-size: 24px;
+}
+
+.post p {
+    font-size: 24px;
+    line-height: 36px;
+}
+
+/* ================================================== Footer-news ========================================== */
+.footer-news {
+    padding-bottom: 32px;
+    display: flex;
+    min-height: 414px;
+    align-items: end;
+    justify-content: end;
+    text-align: right;
+}
+
+.footer-news p {
+    margin: 0;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+}
