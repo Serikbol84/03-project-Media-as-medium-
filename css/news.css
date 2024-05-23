@@ -13,8 +13,8 @@ img {
     margin: 0 160px;
 }
 
-/* ================================================== Header ============================================ */
-/* .header {
+/* ========================================== Header ======================================================= */
+.header {
     font-family: Kanit;
     color: rgba(0, 0, 0, 1);
 }
@@ -26,56 +26,73 @@ img {
 
 .header-logo-2 {
     padding: 64px 0;
-    font-size: 48px;
-} */
-/* ================================================== News ========================================== */
-.page {
-    margin-top: 96px;
-    max-height: 100%;
 }
 
-.news-1 {
+/* ========================================== News List ======================================================= */
+.main {
+    margin-top: 96px;
+}
+
+.news-block {
+    font-family: Inter;
+    color: rgba(0, 0, 0, 1);
+}
+
+.news {
     max-width: 100%;
 }
-
-.news-1 img{
+.news img{
     width: 100%;
 }
 
-.authors-page {
+.news a {
+    color: rgb(111, 109, 109);
+    text-decoration: none;
+}
+
+.auth-logo img{
+    width: 64px;
     height: 64px;
-}
-
-.authors-page p {
-    font-size: 18px;
-    margin-left: 16px;
-}
-
-.authors-page a {
-    font-size: 14px;
 }
 
 .info {
-    height: 64px;
+    width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-.photo img{
-    width: 64px;
-    height: 64px;
+.authors {
+    display: flex;
+    justify-content: space-between;
 }
 
-.title-1 {
-    margin-top: 70px;
+.authors-box {
+    display: flex;
+}
+
+.authors p {
+    margin: 0 0 0 16px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.authors a {
+    font-size: 14px;
+}
+
+.title {
+    margin: 70px 0 24px 0;
     font-size: 34px;
+    font-weight: 700;
 }
 
-.text-1 p{
+.text p {
+    margin: 0 0 70px 0;
     font-size: 24px;
+    font-weight: 400;
     line-height: 36px;
-}   
+}
 
 .post-title {
     margin: 70px 0 24px 0;
@@ -83,12 +100,52 @@ img {
 }
 
 .post p {
+    margin: 0;
     font-size: 24px;
     line-height: 36px;
 }
 
-/* ================================================== Footer-news ========================================== */
-.footer-news {
+.info-bottom {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment {
+    display: flex;
+}
+
+.comment img {
+    width: 18px;
+}
+
+.comment p {
+    margin: 0;
+    margin-left: 7px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(183, 183, 183, 1);
+}
+
+.icon {
+    height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.icon:first-child {
+    margin-right: 17px;
+}
+
+.divider span:after {
+    margin: 36px 0 0 0;
+    content: '';
+    border: 1px solid rgba(111, 109, 109, 0.364);
+    display: block;
+}
+
+/* ========================================== Footer ======================================================= */
+.footer {
     padding-bottom: 32px;
     display: flex;
     min-height: 414px;
@@ -97,9 +154,15 @@ img {
     text-align: right;
 }
 
-.footer-news p {
+.footer p {
     margin: 0;
     font-family: Inter;
     font-size: 14px;
     font-weight: 500;
 }
+
+.footer-menu, a{
+    margin-bottom: 42px;
+    color: rgb(111, 109, 109);
+}
+

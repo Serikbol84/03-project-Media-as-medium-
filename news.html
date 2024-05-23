@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/news.css">
-    <link rel="stylesheet" href="./css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Kanit:wght@400;500;700&display=swap" rel="stylesheet">
     <title>News</title>
@@ -25,28 +24,34 @@
         </div>
     </header>
 
-    <div class="main page">
+    <div class="main">
         <!-- News List 1 -->
         <div class="news-list">
             <div class="container">
                 <div class="news-block">
 
-                    <div class="news news-1">
-                        <div class="authors authors-page">
-                            <div class="auth-logo photo">
-                                <img src="./img/author.svg" alt="">
+                    <div class="news">
+                        <div class="authors">
+                            <div class="authors-box">
+                                <div class="auth-logo">
+                                    <img src="./img/author.svg" alt="">
+                                </div>
+                                <div class="info">
+                                    <p>Authors name </p>
+                                    <p>
+                                        <a href="#">7 july ·</a> 
+                                        <a href="#">12 min read ·</a>
+                                        <a href="#">Member only</a>
+                                    </p>
+                                </div>
                             </div>
-                            <div class="info">
-                                <p>Authors name </p>
-                                <p>
-                                    <a href="#">7 july ·</a> 
-                                    <a href="#">12 min read ·</a>
-                                    <a href="#">Member only</a>
-                                </p>
+                            <!-- Тут я мог передать иконки по отдельности как ссылки. Но так как цель проекта в другом, решил не заморачиваться -->
+                            <div class="socials"> 
+                                <img src="./img/icons.svg" alt="">
                             </div>
                         </div>
 
-                        <div class="text text-1">
+                        <div class="text">
                             <h1 class="title title-1">7 Practical CSS Tips </h1>
                             <p>
                                 How product designers can break from the status quo and help our planet
@@ -78,22 +83,26 @@
                             </p>
                         </div>
 
-                        <div class="button-actions">
-                            <div class="button-line">
-                                <button class="btn">
-                                    <a href="#">Java Script</a>
-                                </button>
-                                <p>
-                                    <a href="#">12 min read</a>
-                                    ·
-                                    <a href="#">Selected for you</a>
-                                </p>
+                        <div class="info-bottom">
+
+                            <div class="comment">
+                                <div class="icon">
+                                    <img src="./img/heart.svg" alt="">
+                                    <p>180</p>
+                                </div>
+                                
+                                <div class="icon">
+                                    <img src="./img/speech-bubble.svg" alt="">
+                                    <p>12</p>
+                                </div>
+                                
                             </div>
-                            <div class="actions">
-                                <img src="./img/actions.svg" alt="">
+                            <div class="icon">
+                                <img src="./img/bookmark.svg" alt="">
                             </div>
-                            
+
                         </div>
+
                     </div>
 
                     
@@ -110,7 +119,7 @@
 
     </div>
  
-    <footer class="footer-news">
+    <footer class="footer">
         <div class="container">
             <div class="footer-menu">
                 <p>
