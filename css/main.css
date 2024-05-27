@@ -118,6 +118,12 @@ img {
     align-self: end;
 }
 
+.img-main {
+    display: flex;
+    width: 265px;
+    height: 265px;
+}
+
 .divider span:after {
     margin: 36px 0 45px 0;
     content: '';

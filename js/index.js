@@ -1,103 +1,102 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const button = document.getElementById('redirectButton');
-    if (button) {
-        button.addEventListener('click', () => {
-            window.location.href = 'index2.html?post=1';
-        });
-    } else {
-        const urlParams = new URLSearchParams(window.location.search);
-        const postId = urlParams.get('post');
-        if (postId) {
-            console.log("Post ID:", postId);
+
+    const main = document.getElementById('main');
+
+    function meiaUrl(article) {  
+        if (article.multimedia && article.multimedia.length > 0) {
+            return article.multimedia[0].url;
+        } else {
+            return "";
         }
     }
-});
 
-const firstTitle = document.getElementById('title-1');
-const secondTitle = document.getElementById('title-2'); 
-const thirdTitle = document.getElementById('title-3'); 
+    function getTopStories() {
+        fetch('https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=o31G1KOG06lYvAiTP5ZG6vPACFMtOglA')
+        .then(response => response.json())
+        .then(data => {
+            const articles = data.results; 
+            articles.forEach((article, index) => {
+                if (index <= 2) {
+                    const imageUrl = meiaUrl(article);
+                    main.innerHTML += `
+                    <div class="news-list">
+                        <div class="container">
+                            <div class="news-block">
 
-function getTopStories() {
-    fetch('https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=o31G1KOG06lYvAiTP5ZG6vPACFMtOglA')
-    .then(response => response.json())
-    .then(data => {
-        const articles = data.results; 
-        articles.forEach((article, index) => {
-            if (index === 0) {
-                firstTitle.innerHTML += `
-                <div class="text">
-                    <h1 class="title" id="title-1">
-                        <a href="index2.html">${article.title} </a>
-                    </h1>
-                    <p id="p-1">
-                        ${article.abstract}
-                    </p>
-                </div>`
-            } else if (index === 2) {
-                secondTitle.innerHTML += `
-                <div class="text">
-                    <h1 class="title" id="title-2">
-                        <a href="index2.html">${article.title} </a>
-                    </h1>
-                    <p id="p-2">
-                        ${article.abstract}
-                    </p>
-                </div>`
-            } else if (index === 10) {
-                thirdTitle.innerHTML += `
-                <div class="text">
-                    <h1 class="title" id="title-3">
-                        <a href="index2.html">${article.title} </a>
-                    </h1>
-                    <p id="p-3">
-                        ${article.abstract}
-                    </p>
-                </div>`
+                                <div class="news" id="news">
+                                    <div class="authors">
+                                        <div class="auth-logo">
+                                            <img src="./img/author.svg" alt="">
+                                        </div>
+                                        <p>Authors name 
+                                            <a href="#">in</a> 
+                                            Topics Name · 
+                                            <a href="#">7 july</a>
+                                        </p>
+                                    </div>
+
+                                    <div class="text">
+                                        <h1 class="title">
+                                            <a href="index2.html">
+                                                ${article.title}
+                                            </a>
+                                        </h1>
+                                        <p>
+                                            ${article.abstract}
+                                        </p>
+                                    </div>
+
+                                    <div class="button-actions">
+                                        <div class="button-line">
+                                            <button class="btn">
+                                                <a href="#">Java Script</a>
+                                            </button>
+                                            <p>
+                                                <a href="#">12 min read</a>
+                                                ·
+                                                <a href="#">Selected for you</a>
+                                            </p>
+                                        </div>
+                                        <div class="actions">
+                                            <img src="./img/actions.svg" alt="">
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="img-main">
+                                    <img src="${imageUrl}" alt="">
+                                </div>
+
+                            </div>
+
+                            <div class="divider">
+                                <span class="divider"> </span>
+                            </div>
+
+                        </div>
+                    </div>
+                    `
+                } 
+                // console.log(article)
+            })
+            const buttons = document.querySelectorAll('.btn');
+            console.log(buttons);
+            if (buttons) {
+                buttons.forEach((button) => {
+                    button.addEventListener('click', () => {
+                        window.location.href = `index2.html?post=1`;
+                    });
+                });
+            } else {
+                const urlParams = new URLSearchParams(window.location.search);
+                const postId = urlParams.get('post');
+                if (postId) {
+                    console.log("Post ID:", postId);
+                }
             }
-
-            console.log(article)
         })
-    })
-    .catch(e=>console.log(e))
-
-    //======================================= Еще один вариант (вроде тоже рабочий) ================================================
-    // .then(data => {
-    //     console.log(data)
-    //     const firstArticle = data.results[0]; 
-    //     firstTitle.innerHTML += `
-    //     <div class="text">
-    //         <h1 class="title" id="title-1">
-    //             <a href="index2.html">${firstArticle.title} </a>
-    //         </h1>
-    //         <p id="p-1">
-    //             ${firstArticle.abstract}
-    //         </p>
-    //     </div>`
-
-    //     const secondArticle = data.results[5];
-    //     secondTitle.innerHTML += `
-    //     <div class="text">
-    //         <h1 class="title" id="title-2">
-    //             <a href="index2.html">${secondArticle.title} </a>
-    //         </h1>
-    //         <p id="p-2">
-    //             ${secondArticle.abstract}
-    //         </p>
-    //     </div>`
-
-    //     const thirdArticle = data.results[7];
-    //     thirdTitle.innerHTML += `
-    //     <div class="text">
-    //         <h1 class="title" id="title-3">
-    //             <a href="index2.html">${thirdArticle.title} </a>
-    //         </h1>
-    //         <p id="p-3">
-    //             ${thirdArticle.abstract}
-    //         </p>
-    //     </div>`
-       
-    // })
-    // .catch(e=>console.log(e))
-}
-
-getTopStories();
+        .catch(e=>console.log(e))
+    }
+    getTopStories();
+});
