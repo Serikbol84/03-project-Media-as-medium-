@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const main = document.getElementById('main');
+    
 
     function mediaUrl(article) {  
         if (article.multimedia && article.multimedia.length > 0) {
@@ -14,10 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=o31G1KOG06lYvAiTP5ZG6vPACFMtOglA')
         .then(response => response.json())
         .then(data => {
+            
             const articles = data.results; 
+            
             articles.forEach((article, index) => {
                 if (index <= 2) {
+
                     const imageUrl = mediaUrl(article);
+
                     main.innerHTML += `
                     <div class="news-list">
                         <div class="container">
@@ -78,14 +83,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     `
                 } 
-                console.log(article)
+               
             })
             const buttons = document.querySelectorAll('.btn');
-            console.log(buttons);
+            
             if (buttons) {
-                buttons.forEach((button) => {
+
+                buttons.forEach((button, index) => {
+                
                     button.addEventListener('click', () => {
-                        window.location.href = `index2.html?post=1`;
+                        window.location.href = `index2.html?post=${index}`;
                     });
                 });
             } else {

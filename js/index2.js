@@ -13,10 +13,10 @@ function newsPage() {
     fetch('https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=o31G1KOG06lYvAiTP5ZG6vPACFMtOglA')
     .then(response => response.json())
     .then(data => {
-        console.log(data)
-
-        const article = data.results[0];
-        console.log(article)
+        const query = window.location.search;
+        const lastElement = query.substring(query.length - 1);
+        const article = data.results[lastElement];
+        // console.log(article)
         if(article) {
             const imageUrl = mediaUrl(article);
             news.innerHTML +=`
