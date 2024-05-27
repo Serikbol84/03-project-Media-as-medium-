@@ -105,6 +105,11 @@ img {
     line-height: 36px;
 }
 
+/* .img-main {
+    display: flex;
+    max-height: 480px;
+} */
+
 .info-bottom {
     margin-top: 70px;
     display: flex;

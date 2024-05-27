@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const main = document.getElementById('main');
 
-    function meiaUrl(article) {  
+    function mediaUrl(article) {  
         if (article.multimedia && article.multimedia.length > 0) {
             return article.multimedia[0].url;
         } else {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const articles = data.results; 
             articles.forEach((article, index) => {
                 if (index <= 2) {
-                    const imageUrl = meiaUrl(article);
+                    const imageUrl = mediaUrl(article);
                     main.innerHTML += `
                     <div class="news-list">
                         <div class="container">
@@ -28,10 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
                                         <div class="auth-logo">
                                             <img src="./img/author.svg" alt="">
                                         </div>
-                                        <p>Authors name 
+                                        <p>${article.byline} 
                                             <a href="#">in</a> 
                                             Topics Name · 
-                                            <a href="#">7 july</a>
+                                            <a href="#">${new Date(article.created_date).toLocaleDateString()}</a>
                                         </p>
                                     </div>
 
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     `
                 } 
-                // console.log(article)
+                console.log(article)
             })
             const buttons = document.querySelectorAll('.btn');
             console.log(buttons);
