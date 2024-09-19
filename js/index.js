@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                                     <div class="text">
                                         <h1 class="title">
-                                            <a href="index2.html">
+                                            <a href="index2.html?post=${index}">
                                                 ${article.title}
                                             </a>
                                         </h1>
